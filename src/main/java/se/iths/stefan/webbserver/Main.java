@@ -1,6 +1,7 @@
 package se.iths.stefan.webbserver;
 
 import se.iths.stefan.webbserver.servlets.HelloServlet;
+import se.iths.stefan.webbserver.servlets.InventoryServlet;
 import se.iths.stefan.webbserver.servlets.RootServlet;
 
 public class Main {
@@ -11,6 +12,7 @@ public class Main {
         var context = new org.eclipse.jetty.servlet.ServletContextHandler();
         context.addServlet(RootServlet.class, "/");
         context.addServlet(HelloServlet.class, "/hello/*");//lägg till /*
+        context.addServlet(InventoryServlet.class, "/inventory");
 
         server.setHandler(context);
 //starta servern
